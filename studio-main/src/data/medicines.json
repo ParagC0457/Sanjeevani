@@ -1,0 +1,202 @@
+[
+    {
+        "id": "1",
+        "name": "Dolo 650",
+        "composition": "Paracetamol (650mg)",
+        "uses": [
+            "Fever",
+            "Pain relief",
+            "Headache"
+        ],
+        "side_effects": [
+            "Nausea",
+            "Stomach pain",
+            "Loss of appetite"
+        ],
+        "price": "30.00",
+        "manufacturer": "Micro Labs Ltd",
+        "type": "Allopathy",
+        "dosage": "As directed by physician",
+        "description": "Dolo 650 Tablet is a common painkiller used to treat aches and pains. It works by blocking chemical messengers in the brain that tell us we have pain. It is effective in relieving pain caused by headache, migraine, nerve pain, toothache, sore throat, period (menstrual) pains, arthritis, and muscle aches."
+    },
+    {
+        "id": "2",
+        "name": "Crocin Advance",
+        "composition": "Paracetamol (500mg)",
+        "uses": [
+            "Fever",
+            "Mild to moderate pain"
+        ],
+        "side_effects": [
+            "Allergic reaction",
+            "Liver damage (in overdose)"
+        ],
+        "price": "15.00",
+        "manufacturer": "GlaxoSmithKline Pharmaceuticals Ltd",
+        "type": "Allopathy",
+        "dosage": "As directed by physician",
+        "description": "Crocin Advance Tablet is used to temporarily relieve fever and mild to moderate pain such as muscle ache, headache, toothache, arthritis, and backache."
+    },
+    {
+        "id": "3",
+        "name": "Augmentin 625 Duo",
+        "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+        "uses": [
+            "Bacterial infections",
+            "Ear infections",
+            "Sinus infections",
+            "Pneumonia"
+        ],
+        "side_effects": [
+            "Vomiting",
+            "Nausea",
+            "Diarrhea"
+        ],
+        "price": "200.00",
+        "manufacturer": "GlaxoSmithKline Pharmaceuticals Ltd",
+        "type": "Allopathy",
+        "dosage": "As directed by physician",
+        "description": "Augmentin 625 Duo Tablet is an antibiotic agent that fights bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue."
+    },
+    {
+        "id": "4",
+        "name": "Allegra 120mg",
+        "composition": "Fexofenadine (120mg)",
+        "uses": [
+            "Allergic rhinitis",
+            "Hives",
+            "Itching"
+        ],
+        "side_effects": [
+            "Headache",
+            "Drowsiness",
+            "Nausea"
+        ],
+        "price": "218.00",
+        "manufacturer": "Sanofi India Ltd",
+        "type": "Allopathy",
+        "dosage": "One tablet daily",
+        "description": "Allegra 120mg Tablet is an anti-allergy medicine used in the treatment of allergic symptoms such as runny nose, sneezing, congestion or stuffy nose, red, watery, and itchy eyes, and itchy skin."
+    },
+    {
+        "id": "5",
+        "name": "Pantocid 40",
+        "composition": "Pantoprazole (40mg)",
+        "uses": [
+            "Acidity",
+            "Heartburn",
+            "GERD"
+        ],
+        "side_effects": [
+            "Diarrhea",
+            "Stomach pain",
+            "Flatulence"
+        ],
+        "price": "155.00",
+        "manufacturer": "Sun Pharmaceutical Industries Ltd",
+        "type": "Allopathy",
+        "dosage": "Once daily before breakfast",
+        "description": "Pantocid 40 Tablet is a medicine that reduces the amount of acid produced in your stomach. It is used for treating acid-related diseases of the stomach and intestine such as heartburn, acid reflux, and peptic ulcer disease."
+    },
+    {
+        "id": "6",
+        "name": "Ascoril LS Syrup",
+        "composition": "Ambroxol (30mg) + Levosalbutamol (1mg) + Guaifenesin (50mg)",
+        "uses": [
+            "Cough with mucus",
+            "Bronchitis",
+            "Asthma"
+        ],
+        "side_effects": [
+            "Nausea",
+            "Vomiting",
+            "Indigestion"
+        ],
+        "price": "118.00",
+        "manufacturer": "Glenmark Pharmaceuticals Ltd",
+        "type": "Allopathy",
+        "dosage": "As measured by cup",
+        "description": "Ascoril LS Syrup is a combination medicine used in the treatment of cough with mucus. It thins mucus in the nose, windpipe, and lungs, making it easier to cough out."
+    },
+    {
+        "id": "7",
+        "name": "Combiflam",
+        "composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+        "uses": [
+            "Pain relief",
+            "Fever",
+            "Inflammation"
+        ],
+        "side_effects": [
+            "Heartburn",
+            "Indigestion",
+            "Nausea"
+        ],
+        "price": "45.00",
+        "manufacturer": "Sanofi India Ltd",
+        "type": "Allopathy",
+        "dosage": "As directed by physician",
+        "description": "Combiflam Tablet contains two medicines: Ibuprofen and Paracetamol. These work together to relieve pain, fever, and inflammation."
+    },
+    {
+        "id": "8",
+        "name": "Montair LC",
+        "composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+        "uses": [
+            "Allergic rhinitis",
+            "Asthma prevention",
+            "Sneezing"
+        ],
+        "side_effects": [
+            "Nausea",
+            "Diarrhea",
+            "Dryness in mouth",
+            "Fatigue"
+        ],
+        "price": "315.00",
+        "manufacturer": "Cipla Ltd",
+        "type": "Allopathy",
+        "dosage": "Usually taken at night",
+        "description": "Montair LC Tablet is a combination medicine used in the treatment of allergic symptoms such as runny nose, stuffy nose, sneezing, itching, swelling, watery eyes and congestion or stuffiness."
+    },
+    {
+        "id": "9",
+        "name": "Azithral 500",
+        "composition": "Azithromycin (500mg)",
+        "uses": [
+            "Bacterial infections",
+            "Throat infection",
+            "Pneumonia"
+        ],
+        "side_effects": [
+            "Vomiting",
+            "Nausea",
+            "Abdominal pain"
+        ],
+        "price": "119.00",
+        "manufacturer": "Alembic Pharmaceuticals Ltd",
+        "type": "Allopathy",
+        "dosage": "Once daily for 3-5 days",
+        "description": "Azithral 500 Tablet is an antibiotic used to treat various types of bacterial infections of the respiratory tract, ear, nose, throat, lungs, skin, and eye in adults and children."
+    },
+    {
+        "id": "10",
+        "name": "Volini Gel",
+        "composition": "Diclofenac Diethylamine + Menthol + Methyl Salicylate",
+        "uses": [
+            "Muscle pain",
+            "Joint pain",
+            "Backache",
+            "Sprains"
+        ],
+        "side_effects": [
+            "Skin irritation",
+            "Redness"
+        ],
+        "price": "135.00",
+        "manufacturer": "Sun Pharmaceutical Industries Ltd",
+        "type": "Allopathy",
+        "dosage": "Apply to affected area 3-4 times daily",
+        "description": "Volini Gel is a pain relief gel that provides fast and effective relief from muscle pain, neck and back pain, inflammation, sprain, myositis, fibrositis and sciatica."
+    }
+]

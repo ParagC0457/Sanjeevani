@@ -1,0 +1,68 @@
+[
+    {
+        "symptom": "headache",
+        "medicine_ids": [
+            "1",
+            "2",
+            "7",
+            "10"
+        ]
+    },
+    {
+        "symptom": "fever",
+        "medicine_ids": [
+            "1",
+            "2",
+            "7"
+        ]
+    },
+    {
+        "symptom": "cold",
+        "medicine_ids": [
+            "4",
+            "8"
+        ]
+    },
+    {
+        "symptom": "cough",
+        "medicine_ids": [
+            "6"
+        ]
+    },
+    {
+        "symptom": "acidity",
+        "medicine_ids": [
+            "5"
+        ]
+    },
+    {
+        "symptom": "infection",
+        "medicine_ids": [
+            "3",
+            "9"
+        ]
+    },
+    {
+        "symptom": "bacterial infection",
+        "medicine_ids": [
+            "3",
+            "9"
+        ]
+    },
+    {
+        "symptom": "pain",
+        "medicine_ids": [
+            "1",
+            "2",
+            "7",
+            "10"
+        ]
+    },
+    {
+        "symptom": "allergy",
+        "medicine_ids": [
+            "4",
+            "8"
+        ]
+    }
+]
