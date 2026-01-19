@@ -1,3 +1,6 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { LayoutProvider } from '@/context/layout-context';
 import AppSidebar from '@/components/layout/app-sidebar';
 import Header from '@/components/layout/header';
@@ -7,6 +10,13 @@ type Props = {
 };
 
 export default function AppShell({ children }: Props) {
+  const pathname = usePathname();
+  const isAuthPage = pathname?.startsWith('/auth');
+
+  if (isAuthPage) {
+    return <main className="flex-1 min-h-screen">{children}</main>;
+  }
+
   return (
     <LayoutProvider>
       <div className="flex min-h-screen bg-secondary/30">

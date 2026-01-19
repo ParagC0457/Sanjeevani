@@ -66,3 +66,82 @@ export async function runCostEstimator(input: CostEstimatorInput) {
     return { error: 'An unexpected error occurred while estimating the cost. Please try again.' };
   }
 }
+
+// Health News Fetching
+import { fetchMedicalNews, fallbackArticles, getCategoryImage, type NewsArticle } from '@/lib/news-scraper';
+
+export async function getHealthNews(): Promise<{ articles: NewsArticle[], error?: string }> {
+  try {
+    const rawArticles = await fetchMedicalNews();
+
+    // We strictly have 8 unique local images. 
+    // To ensure NO repeats, we limit to 8 articles max.
+    const limitedArticles = rawArticles.slice(0, 8);
+
+    const allImages = [
+      '/images/health/diabetes.png',
+      '/images/health/heart.png',
+      '/images/health/mental-health.png',
+      '/images/health/flu.png',
+      '/images/health/nutrition.png',
+      '/images/health/sleep.png',
+      '/images/health/fitness.png',
+      '/images/health/medical-default.png'
+    ];
+
+    // Track which images have been assigned to effectively use the "pool"
+    const usedImages = new Set<string>();
+    const processedArticles = limitedArticles.map(article => ({ ...article, imageUrl: '' }));
+
+    // Pass 1: Try to match keywords to specific images
+    processedArticles.forEach(article => {
+      const title = article.title.toLowerCase();
+      const cat = article.category.toLowerCase();
+
+      let match = '';
+      if ((title.includes('diabetes') || title.includes('sugar')) && !usedImages.has('/images/health/diabetes.png')) match = '/images/health/diabetes.png';
+      else if ((title.includes('heart') || title.includes('cardio')) && !usedImages.has('/images/health/heart.png')) match = '/images/health/heart.png';
+      else if ((title.includes('mental') || title.includes('stress')) && !usedImages.has('/images/health/mental-health.png')) match = '/images/health/mental-health.png';
+      else if ((title.includes('flu') || title.includes('virus')) && !usedImages.has('/images/health/flu.png')) match = '/images/health/flu.png';
+      else if ((title.includes('food') || title.includes('diet')) && !usedImages.has('/images/health/nutrition.png')) match = '/images/health/nutrition.png';
+      else if ((title.includes('sleep') || title.includes('rest')) && !usedImages.has('/images/health/sleep.png')) match = '/images/health/sleep.png';
+      else if ((title.includes('fitness') || title.includes('gym')) && !usedImages.has('/images/health/fitness.png')) match = '/images/health/fitness.png';
+
+      if (match) {
+        article.imageUrl = match;
+        usedImages.add(match);
+      }
+    });
+
+    // Pass 2: Fill in the blanks with remaining unused images
+    const unusedImages = allImages.filter(img => !usedImages.has(img));
+    processedArticles.forEach(article => {
+      if (!article.imageUrl && unusedImages.length > 0) {
+        const nextImage = unusedImages.shift();
+        if (nextImage) {
+          article.imageUrl = nextImage;
+          usedImages.add(nextImage);
+        }
+      }
+    });
+
+    // If we somehow still have articles without images (unlikely if counts match), 
+    // filter them out to strictly obey "no defaults/repeats" rule.
+    const finalArticles = processedArticles.filter(a => a.imageUrl);
+
+    return { articles: finalArticles as NewsArticle[] };
+  } catch (error: any) {
+    console.error('Error fetching health news:', error);
+    return {
+      articles: fallbackArticles,
+      error: 'Using cached health articles. Live news temporarily unavailable.'
+    };
+  }
+}
+
+// User Authentication Actions
+export async function registerUser(formData: any) {
+  // Mock registration: Always succeed for now
+  return { success: true, message: 'Account created successfully (Mock)! Please login.' };
+}
+

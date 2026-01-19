@@ -8,11 +8,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Bot, User, Loader, RefreshCw, Clock } from 'lucide-react';
+import { Bot, User, Loader, RefreshCw, Clock, Mic, MicOff } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useSpeechRecognition } from '@/hooks/use-speech-recognition';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,6 +43,21 @@ export default function SymptomChecker({ initialInput }: SymptomCheckerProps) {
   const [chatHistory, setChatHistory] = useState<Message[][]>([]);
   const { toast } = useToast();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  const {
+    isListening,
+    transcript,
+    startListening,
+    stopListening,
+    hasRecognitionSupport
+  } = useSpeechRecognition();
+
+  // Update input when transcript changes
+  useEffect(() => {
+    if (transcript && isListening) {
+      setInput(transcript);
+    }
+  }, [transcript, isListening]);
 
   // Load chat history from localStorage on initial render
   useEffect(() => {
@@ -251,11 +267,34 @@ export default function SymptomChecker({ initialInput }: SymptomCheckerProps) {
         </ScrollArea>
       </CardContent>
       <CardFooter className="flex-shrink-0">
-        <form onSubmit={handleSubmit} className="flex w-full gap-2">
+        <form onSubmit={handleSubmit} className="flex w-full gap-2 relative">
+          <Button
+            type="button"
+            size="icon"
+            variant={isListening ? "destructive" : "secondary"}
+            className={cn("shrink-0 transition-all", isListening && "animate-pulse")}
+            onClick={() => {
+              if (isListening) {
+                stopListening();
+              } else {
+                startListening(language);
+              }
+            }}
+            disabled={!hasRecognitionSupport}
+            title={!hasRecognitionSupport ? "Speech recognition not supported in this browser" : "Toggle voice input"}
+          >
+            {isListening ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
+          </Button>
+
           <Textarea
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="e.g., What is Dolo 650? or I have a headache..."
+            onChange={(e) => {
+              setInput(e.target.value);
+              // If user types manually, we don't want to reset the transcript immediately, 
+              // but we should know that manual input happened. 
+              // For simplicity in this implementation, we just update the input.
+            }}
+            placeholder={isListening ? "Listening..." : "e.g., What is Dolo 650? or I have a headache..."}
             className="flex-1"
             rows={1}
             disabled={isLoading}

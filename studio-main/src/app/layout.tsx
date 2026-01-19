@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: 'Your intelligent partner for a healthier life.',
 };
 
+import { AuthProvider } from '@/context/auth-provider';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,10 +34,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>
-            <AppShell>{children}</AppShell>
-            <Toaster />
-          </LanguageProvider>
+          <AuthProvider>
+            <LanguageProvider>
+              <AppShell>{children}</AppShell>
+              <Toaster />
+            </LanguageProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
