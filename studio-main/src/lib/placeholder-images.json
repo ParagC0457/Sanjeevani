@@ -1,0 +1,52 @@
+{
+  "placeholderImages": [
+    {
+      "id": "diabetes",
+      "description": "A medical illustration of a blood glucose meter showing a reading.",
+      "imageUrl": "https://picsum.photos/seed/diabetes/600/400",
+      "imageHint": "medical glucometer"
+    },
+    {
+      "id": "asthma",
+      "description": "A medical illustration of lungs with an inhaler.",
+      "imageUrl": "https://picsum.photos/seed/asthma/600/400",
+      "imageHint": "medical asthma"
+    },
+    {
+      "id": "bloodPressure",
+      "description": "A medical illustration of a digital blood pressure monitor on a person's arm.",
+      "imageUrl": "https://picsum.photos/seed/bloodpressure/600/400",
+      "imageHint": "medical sphygmomanometer"
+    },
+    {
+      "id": "flu",
+      "description": "A medical illustration of the influenza virus.",
+      "imageUrl": "https://picsum.photos/seed/flu/600/400",
+      "imageHint": "medical virus"
+    },
+    {
+      "id": "eczema",
+      "description": "A medical illustration showing a cross-section of skin affected by eczema.",
+      "imageUrl": "https://picsum.photos/seed/eczema/600/400",
+      "imageHint": "medical dermatology"
+    },
+    {
+      "id": "arthritis",
+      "description": "An anatomical illustration showing joints affected by arthritis.",
+      "imageUrl": "https://picsum.photos/seed/arthritis/600/400",
+      "imageHint": "medical arthritis"
+    },
+    {
+      "id": "heartHealth",
+      "description": "A medical illustration of a healthy human heart with arteries.",
+      "imageUrl": "https://picsum.photos/seed/heart/600/400",
+      "imageHint": "medical heart"
+    },
+    {
+      "id": "migraine",
+      "description": "A medical illustration of a human head showing the areas affected by a migraine.",
+      "imageUrl": "https://picsum.photos/seed/migraine/600/400",
+      "imageHint": "medical neurology"
+    }
+  ]
+}
