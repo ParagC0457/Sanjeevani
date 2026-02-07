@@ -1,0 +1,6 @@
+[2026-02-06T10:49:24.436Z] Received query: I feel dizzy and have high blood pressure
+[2026-02-06T10:49:24.954Z] NLP Result for "I feel dizzy and have high blood pressure": Intent="undefined" Score=undefined RemediesCount=3
+[2026-02-06T10:50:29.046Z] Received query: My joints hurt and are swelling
+[2026-02-06T10:50:29.071Z] NLP Result for "My joints hurt and are swelling": Intent="undefined" Score=undefined RemediesCount=3
+[2026-02-07T15:35:04.903Z] Received query: stomach ache and vomiting tendencies
+[2026-02-07T15:35:06.414Z] NLP Result for "stomach ache and vomiting tendencies": Intent="undefined" Score=undefined RemediesCount=3
